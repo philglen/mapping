@@ -1,0 +1,37 @@
+div.leaflet-container {
+  position: absolute !important;
+  width: 100%;
+  height: calc(100% - 105px);
+}
+
+#mapContainer {
+  height: 100%;
+  width: 109%;
+  margin-left: -15px;
+}
+
+.leaflet-map {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-bar {
+  border-radius: none !important;
+}
+
+.base-layers-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 244px;
+  height: auto;
+}
+
+.leaflet-control-layers-overlays {
+  .title {
+    font-weight: bold !important;
+  }
+  .toggle-switch, .status {
+    float: left;
+  }
+}

@@ -1,0 +1,23 @@
+<div class="base-layer-button" (click)="toggleBaseLayerControl($event)" title="Show Layers">
+  <i class="fas fa-layer-group"></i>
+</div>
+
+<div *ngIf="showBaseLayerControl" class="base-layers">
+  <div class="close">
+    <i class="fas fa-times" aria-label="Close" (click)="toggleBaseLayerControl($event)"></i>
+  </div>
+  <div class="layers">
+    <ng-template ngFor let-layer [ngForOf]="baseLayers" let-i="index" let-last="last">
+      <div class="row" *ngIf="i % 2 === 0">
+        <div class="layer first-column" (click)="selectLayer(baseLayers[i])">
+          <img [src]="baseLayers[i].img" [alt]="baseLayers[i].name" [ngClass]="{'active': baseLayers[i].active}">
+          <span>{{baseLayers[i].name}}</span>
+        </div>
+        <div class="layer second-column" (click)="selectLayer(baseLayers[i+1])" *ngIf="!last">
+          <img [src]="baseLayers[i+1].img" [alt]="baseLayers[i+1].name" [ngClass]="{'active': baseLayers[i+1].active}">
+          <span>{{baseLayers[i+1].name}}</span>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

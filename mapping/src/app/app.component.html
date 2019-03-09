@@ -1,0 +1,19 @@
+<div
+  class="leaflet-container"
+  #map
+  leaflet
+  leafletDraw
+  [leafletOptions]="leafletOptions"
+  [leafletDrawOptions]="drawOptions"
+  (leafletMapReady)="onMapReady($event)">
+
+  <app-base-layers-control
+    [baseLayers]="layersControl.baseLayers"
+    [overlays]="layersControl.overlays"
+    [(showBaseLayerControl)]="showBaseLayerControl"
+    (switchLayer)="selectLayer($event)"
+    (switchOverlay)="toggleOverlay($event)"
+    class="base-layers-control"
+  ></app-base-layers-control>
+
+></div>
